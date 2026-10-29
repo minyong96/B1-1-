@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <meta name="description" content="순수 HTML/CSS/JavaScript로 만든 반응형 포트폴리오">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <script>
+    // 첫 페인트 전에 저장된 테마를 적용해 깜빡임(FOUC) 방지
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) { /* localStorage 접근 불가 시 무시 */ }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a href="#hero" class="logo">MyPortfolio</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="다크 모드 전환">🌙</button>
+        <button type="button" class="icon-btn hamburger" id="hamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container reveal">
+        <p class="hero-hello">Hello!</p>
+        <h1>I am <span class="accent" id="typing-name">Your Name</span>.</h1>
+        <p class="hero-sub">이벤트 → 상태 → 렌더링을 이해하는 프론트엔드 개발자를 꿈꿉니다.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about reveal">
+        <img src="images/profile.svg" alt="프로필 사진: 보라색 배경의 사람 실루엣 아이콘" class="profile-img" width="200" height="200">
+        <div>
+          <h2>About Me</h2>
+          <p>안녕하세요! 웹의 동작 원리를 순수 HTML, CSS, JavaScript로 배우고 있습니다. 사용자 이벤트가 상태를 바꾸고, 상태가 화면을 그리는 흐름을 직접 구현하며 React 학습을 준비하고 있습니다.</p>
+          <p>관심사: 웹 접근성, 반응형 디자인, 비동기 데이터 처리.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-alt">
+      <div class="container reveal">
+        <h2>Skills</h2>
+        <ul class="skills" id="skills-list"></ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects <small>(GitHub API)</small></h2>
+        <div class="filters" id="filters" aria-label="언어별 필터"></div>
+        <div id="projects-status" class="status" role="status" aria-live="polite"></div>
+        <div id="projects-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+      <div class="container reveal">
+        <h2>Contact</h2>
+        <form id="contact-form" class="form" novalidate>
+          <div class="field">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <p class="error" id="name-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <p class="error" id="email-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="message">메시지</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <p class="error" id="message-error" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+          <p class="success" id="form-success" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Your Name</p>
+      <ul class="social">
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로 이동">↑</button>
+</body>
+</html>
