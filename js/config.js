@@ -1,5 +1,5 @@
 // 본인 정보로 교체하세요
-export const GITHUB_USER = 'octocat';
+export const GITHUB_USER = 'minyong96';
 export const NAME = 'Your Name';
 
 // README에 명시할 임계값
