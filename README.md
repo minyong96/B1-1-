@@ -2,8 +2,8 @@
 
 순수 HTML / CSS / JavaScript(ES6+)만으로 만든 반응형 포트폴리오 웹사이트입니다. GitHub API로 저장소 목록을 불러와 Projects 섹션에 렌더링합니다.
 
-- 배포 URL: _(GitHub Pages 배포 후 기입)_
-- 저장소: _(기입)_
+- 배포 URL: https://minyong96.github.io/B1-1-/
+- 저장소: https://github.com/minyong96/B1-1-
 
 ## 사용 기술
 HTML5(시맨틱 마크업), CSS3(변수, Flexbox, Grid, 모바일 퍼스트), JavaScript(ES Modules, fetch/async-await, IntersectionObserver, localStorage). 외부 라이브러리 없음.
@@ -34,4 +34,11 @@ VS Code Live Server로 `index.html`을 엽니다. (ES Module을 사용하므로 
 4. 필터: 버튼 click → `filter` 상태 → 카드 목록
 
 ## 스크린샷
-_(데스크톱 / 모바일 / 다크모드 스크린샷 추가)_
+### 데스크톱
+![데스크톱](images/screenshot-desktop.png)
+
+### 모바일 (390px)
+![모바일](images/screenshot-mobile.png)
+
+### 다크 모드
+![다크 모드](images/screenshot-dark.png)
